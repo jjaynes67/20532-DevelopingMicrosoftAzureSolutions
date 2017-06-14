@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="sha384-2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">
+<h1 id="module-6-storing-tabular-data-in-azure">Module 6: Storing Tabular Data in Azure</h1>
 <h1 id="lab-storing-event-registration-data-in-azure-storage-tables">Lab: Storing Event Registration Data in Azure Storage Tables</h1>
 <h3 id="scenario">Scenario</h3>
 <p>Even though event registrations could be stored in SQL, you have a unique need. Each event requires a different registration form that can be changed at any time. Essentially, registrations could be of any schema. A relational database such as SQL requires a well-defined schema. Because of your business requirement, you require a database that can store items with flexible structures (or schemas). To facilitate this you have elected to use Azure Table Storage for your event registrations.</p>
@@ -13,7 +13,7 @@
 </li>
 <li><p>Use the Azure Store SDK to query entities.</p>
 </li>
-<li><p>Use Cloud Explorer in Visual Studio 2015 to view Table storage entities.</p>
+<li><p>Use Cloud Explorer in Visual Studio 2017 to view Table storage entities.</p>
 </li>
 </ul>
 <h3 id="lab-setup">Lab Setup</h3>
@@ -190,11 +190,11 @@ this.RegistrationStub = DynamicEntity.GenerateDynamicItem(tableEntity);
 </li>
 <li><p>Run the data generation console project to populate the Azure storage table with data.</p>
 </li>
-<li><p>Use Cloud Explorer in Visual Studio 2015 to view table storage registrations.</p>
+<li><p>Use Cloud Explorer in Visual Studio 2017 to view table storage registrations.</p>
 </li>
 <li><p>Debug the cloud web project to register for the event.</p>
 </li>
-<li><p>Use Cloud Explorer in Visual Studio 2015 to view the new table storage registration.</p>
+<li><p>Use Cloud Explorer in Visual Studio 2017 to view the new table storage registration.</p>
 </li>
 </ol>
 <h4 id="task-1-create-a-storage-account-instance">Task 1: Create a Storage Account Instance</h4>
@@ -227,7 +227,7 @@ this.RegistrationStub = DynamicEntity.GenerateDynamicItem(tableEntity);
 <li><p>Debug the <strong>Contoso.Events.Data.Generation</strong> project to generate the SQL and storage tables data.</p>
 </li>
 </ol>
-<h4 id="task-3-use-cloud-explorer-in-visual-studio-2015-to-view-table-storage-registrations">Task 3: Use Cloud Explorer in Visual Studio 2015 to view table storage registrations</h4>
+<h4 id="task-3-use-cloud-explorer-in-visual-studio-2017-to-view-table-storage-registrations">Task 3: Use Cloud Explorer in Visual Studio 2017 to view table storage registrations</h4>
 <ol>
 <li><p>In the <strong>Cloud Explorer</strong> pane, open the <strong>Storage Accounts</strong> node.</p>
 </li>
@@ -259,7 +259,7 @@ this.RegistrationStub = DynamicEntity.GenerateDynamicItem(tableEntity);
 <li><p>Register for an event by using the website.</p>
 </li>
 </ol>
-<h4 id="task-5-use-cloud-explorer-in-visual-studio-2015-to-view-the-new-table-storage-registration">Task 5: Use Cloud Explorer in Visual Studio 2015 to view the new table storage registration</h4>
+<h4 id="task-5-use-cloud-explorer-in-visual-studio-2017-to-view-the-new-table-storage-registration">Task 5: Use Cloud Explorer in Visual Studio 2017 to view the new table storage registration</h4>
 <ol>
 <li><p>Switch to the <strong>Contoso.Events – Microsoft Visual Studio</strong> window</p>
 </li>

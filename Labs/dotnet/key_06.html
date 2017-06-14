@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="sha384-2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">
+<h1 id="module-6-storing-tabular-data-in-azure">Module 6: Storing Tabular Data in Azure</h1>
 <h1 id="lab-storing-event-registration-data-in-azure-storage-tables">Lab: Storing Event Registration Data in Azure Storage Tables</h1>
 <h2 id="exercise-1-populating-the-sign-in-form-with-registrant-names">Exercise 1: Populating the Sign-In Form with Registrant Names</h2>
 <h4 id="task-1-create-an-instance-of-the-cloudtable-class">Task 1: Create an instance of the CloudTable class</h4>
@@ -175,11 +175,12 @@
 <p> c. In the <strong>Account kind</strong> list, ensure that the <em>General purpose</em> option is selected.</p>
 <p> d. In the <strong>Performance</strong> section, ensure that the <em>Standard</em> option is selected.</p>
 <p> e. Click on the <strong>Replication</strong> list and select the <strong>Locally-Redundant Storage (LRS)</strong> option.</p>
-<p> f. In the <strong>Location</strong> list, select the region closest to your current location.</p>
+<p> f. In the <strong>Storage service encryption</strong> section, ensure that the <em>Disabled</em> option is selected.</p>
 <p> g. In the <strong>Resource group</strong> section, select the <strong>Use existing</strong> option.</p>
 <p> h. In the <strong>Resource group</strong> section, locate the dialog box and provide the value <strong>20532</strong>.</p>
-<p> i. Ensure that the <strong>Pin to dashboard</strong> option is selected.</p>
-<p> j. Click <strong>Create</strong>.</p>
+<p> i. In the <strong>Location</strong> list, select the region closest to your current location.</p>
+<p> j. Ensure that the <strong>Pin to dashboard</strong> option is selected.</p>
+<p> k. Click <strong>Create</strong>.</p>
 </li>
 <li><p>Once the <strong>Storage account</strong> instance is created, the blade for the new instance will open automatically.</p>
 </li>
@@ -221,7 +222,7 @@
 <li><p>Wait for debugging to complete (when the console window closes).</p>
 </li>
 </ol>
-<h4 id="task-3-use-cloud-explorer-in-visual-studio-2015-to-view-table-storage-registrations">Task 3: Use Cloud Explorer in Visual Studio 2015 to view table storage registrations</h4>
+<h4 id="task-3-use-cloud-explorer-in-visual-studio-2017-to-view-table-storage-registrations">Task 3: Use Cloud Explorer in Visual Studio 2017 to view table storage registrations</h4>
 <ol>
 <li><p>On the <strong>View</strong> menu, click <strong>Cloud Explorer</strong>.</p>
 </li>
@@ -301,7 +302,7 @@
 <li><p>Close the tab displaying the website.</p>
 </li>
 </ol>
-<h4 id="task-5-use-cloud-explorer-in-visual-studio-2015-to-view-the-new-table-storage-registration">Task 5: Use Cloud Explorer in Visual Studio 2015 to view the new table storage registration</h4>
+<h4 id="task-5-use-cloud-explorer-in-visual-studio-2017-to-view-the-new-table-storage-registration">Task 5: Use Cloud Explorer in Visual Studio 2017 to view the new table storage registration</h4>
 <ol>
 <li><p>Switch to the <strong>Contoso.Events – Microsoft Visual Studio</strong> window.</p>
 </li>

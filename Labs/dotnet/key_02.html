@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="sha384-2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">
+<h1 id="module-2-building-application-infrastructure-in-azure">Module 2: Building Application Infrastructure in Azure</h1>
 <h1 id="lab-creating-an-azure-virtual-machine-for-development-and-testing">Lab: Creating an Azure Virtual Machine for Development and Testing</h1>
 <h3 id="exercise-1-creating-a-network-and-resource-container">Exercise 1:    Creating a Network and Resource Container</h3>
 <h4 id="task-1-sign-in-to-the-azure-portal">Task 1: Sign in to the Azure Portal</h4>
@@ -73,11 +73,12 @@
 <p>c. In the <strong>Account kind</strong> list, ensure that the <em>General purpose</em> option is selected.</p>
 <p>d. In the <strong>Performance</strong> section, ensure that the <em>Standard</em> option is selected.</p>
 <p>e. Click on the <strong>Replication</strong> list and select the <strong>Locally-redundant storage (LRS)</strong> option.</p>
-<p>f. In the <strong>Location</strong> list, select the region closest to your current location.</p>
+<p>f. In the <strong>Storage service encryption</strong> section, ensure that the <em>Disabled</em> option is selected.</p>
 <p>g. In the <strong>Resource group</strong> section, select the <strong>Use existing</strong> option.</p>
 <p>h. In the <strong>Resource group</strong> section, locate the dialog box and provide the value <strong>20532</strong>.</p>
-<p>i. Ensure that the <strong>Pin to Dashboard</strong> option is selected.</p>
-<p>j. Click <strong>Create</strong>.</p>
+<p>i. In the <strong>Location</strong> list, select the region closest to your current location.</p>
+<p>j. Ensure that the <strong>Pin to Dashboard</strong> option is selected.</p>
+<p>k. Click <strong>Create</strong>.</p>
 <blockquote>
 <p><strong>Note</strong> Wait for Azure to finish creating the storage account prior to moving forward with the lab. You will receive a notification when the <em>Storage Account</em> is created and you will see the Storage Account&#39;s blade.</p>
 </blockquote>
@@ -95,13 +96,13 @@
 </li>
 <li><p>In the <strong>Virtual Machines</strong> blade that displays, search for and select the following template:</p>
 <ul>
-<li>Visual Studio Community 2015 with Azure SDK 2.9 on Windows Server 2012 R2</li>
+<li>Visual Studio Community 2017 on Windows Server 2016 (x64)</li>
 </ul>
 <blockquote>
 <p><strong>Note:</strong> Ensure that you select this specific template as all further lab instructions assume that you are using this exact Azure SDK version, OS and Visual Studio version.</p>
 </blockquote>
 </li>
-<li><p>In the <strong>Visual Studio Community 2015 with Azure SDK 2.9 on Windows Server 2012 R2</strong> blade, ensure that the <strong>Resource Manager</strong> deployment model is selected and click the <strong>Create</strong> button.</p>
+<li><p>In the <strong>Visual Studio Community 2017 on Windows Server 2016 (x64)</strong> blade, ensure that the <strong>Resource Manager</strong> deployment model is selected and click the <strong>Create</strong> button.</p>
 </li>
 <li><p>In the <strong>Create virtual machine</strong> blade that displays, click <strong>Basics</strong> and perform the following steps:</p>
 <p>a. In the <strong>Name</strong> dialog box, provide the value <strong>vm20532</strong>.</p>
@@ -119,13 +120,14 @@
 <p>c. Click the <strong>Select</strong> button.</p>
 </li>
 <li><p>In the <strong>Create Virtual Machine</strong> blade that displays, click <strong>Settings</strong> and perform the following steps:</p>
-<p>a. Click the <strong>Storage Account</strong> section and then select <strong>stor20532[your name here]</strong>.</p>
-<p>b. Click the <strong>Virtual Network</strong> section and then select <strong>vnet20532</strong>.</p>
-<p>c. Click the <strong>Subnet</strong> section and then select <strong>Apps</strong>.</p>
-<p>d  Leave default values for <strong>Public IP Address</strong>, <strong>Network Security Group (firewall)</strong>, <strong>Extensions</strong> and <strong>High Availability</strong>.</p>
-<p>e. Under the <strong>Monitoring &gt; Diagnostics</strong> section, select the <strong>Disabled</strong> option.</p>
-<p>f. Leave the default value for <strong>Diagnostic Storage Account</strong>.</p>
-<p>g. Scroll down and click <strong>OK</strong>.</p>
+<p>a. Under the <strong>Storage &gt; Use managed disks</strong> section, select the <strong>No</strong> option.</p>
+<p>b. Click the <strong>Storage Account</strong> section and then select <strong>stor20532[your name here]</strong>.</p>
+<p>c. Click the <strong>Virtual Network</strong> section and then select <strong>vnet20532</strong>.</p>
+<p>d. Click the <strong>Subnet</strong> section and then select <strong>Apps</strong>.</p>
+<p>e  Leave default values for <strong>Public IP Address</strong>, <strong>Network Security Group (firewall)</strong>, <strong>Extensions</strong> and <strong>High Availability</strong>.</p>
+<p>f. Under the <strong>Monitoring &gt; Boot diagnostics</strong> section, select the <strong>Disabled</strong> option.</p>
+<p>g. Under the <strong>Monitoring &gt; Guest OS diagnostics</strong> section, select the <strong>Disabled</strong> option.</p>
+<p>h. Scroll down and click <strong>OK</strong>.</p>
 </li>
 <li><p>In the <strong>Create Virtual Machine</strong> blade that displays, click <strong>Summary</strong> and click <strong>OK</strong> to create the virtual machine using your specified configuration.</p>
 <blockquote>
@@ -138,15 +140,16 @@
 </li>
 <li><p>In the <strong>Settings</strong> section, select the <strong>Disks</strong> option.</p>
 </li>
-<li><p>In the <strong>Disks</strong> blade, click <strong>Attach New</strong>.</p>
+<li><p>In the <strong>Disks</strong> blade, click <strong>Add data disk</strong>.</p>
 </li>
 <li><p>In the <strong>Attach a new disk</strong> blade, perform the following steps:</p>
 <p>a. In the <strong>name</strong> box, provide <strong>vm20532-AllFiles</strong></p>
-<p>b. For <strong>Type</strong>, select <strong>HDD</strong>.</p>
+<p>b. For <strong>Source type</strong>, select <strong>New (empty disk)</strong></p>
+<p>c. For <strong>Account type</strong>, select <strong>Standard (HDD)</strong>.</p>
 <p>c. In the <strong>Size (GiB)</strong> dialog box, provide the value, <strong>128</strong>.</p>
-<p>d. Click on <strong>Location</strong> and then from the <strong>Storage account</strong> blade, select the previously created storage account, <strong>stor20532[Your Name Here]</strong></p>
+<p>d. In the <strong>Storage container</strong> section, click on <strong>Browse</strong> and then from the <strong>Storage account</strong> blade, select the previously created storage account, <strong>stor20532[Your Name Here]</strong></p>
 <p>e. In the <strong>Containers</strong> blade, select <strong>vhds</strong> container and click <strong>Select</strong>.</p>
-<p>f. To create the second disk, click <strong>OK</strong>.</p>
+<p>f. To create the second disk, click <strong>Save</strong>.</p>
 <blockquote>
 <p><strong>Note:</strong> Wait about five minutes for the empty disk to be attached to the virtual machine.</p>
 </blockquote>
@@ -268,9 +271,9 @@
 </ol>
 <h4 id="task-4-add-your-azure-subscription-to-visual-studio">Task 4: Add your Azure subscription to Visual Studio</h4>
 <ol>
-<li><p>On the Start screen, locate and click the <strong>Visual Studio 2015</strong> tile.</p>
+<li><p>On the Start screen, locate and click the <strong>Visual Studio 2017</strong> tile.</p>
 <blockquote>
-<p><strong>Note:</strong> You might have to use the down arrow to locate the Visual Studio 2015 tile on your Start screen.</p>
+<p><strong>Note:</strong> You might have to use the down arrow to locate the Visual Studio 2017 tile on your Start screen.</p>
 </blockquote>
 </li>
 <li><p>You will be prompted to sign-in using a <strong>Microsoft Account</strong>. Perform the following steps:</p>

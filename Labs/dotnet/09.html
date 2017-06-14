@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="sha384-2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">
+<h1 id="module-9-automating-integration-with-azure-resources">Module 9: Automating Integration with Azure Resources</h1>
 <h1 id="lab-automating-the-creation-of-azure-assets-using-powershell-and-xplat-cli">Lab: Automating the Creation of Azure Assets using PowerShell and xPlat CLI</h1>
 <h3 id="scenario">Scenario</h3>
 <p>Now that you have created many of the resources that you will use in your Azure application, you have decided to automate the creation of your assets in Azure. Some of your administrators are Windows experts and would prefer to automate using PowerShell while others use Linux and would prefer to automate from the command line. Due to this requirement, you will try and implement automation using PowerShell and separately using a cross-platform CLI interface.</p>
@@ -117,7 +117,7 @@
 <li><p>View the details for your newly created Website by using the following command:</p>
 <pre><code>azure resource show --name [Unique Name] --resource-type &quot;Microsoft.Web/Sites&quot; --resource-group rga20532 --api-version &quot;2014-06-01&quot; --json
 </code></pre></li>
-<li><p>Record the <strong>defaultHostName</strong> value from your new Web App&#39;s properties.</p>
+<li><p>Record the <strong>defaultHostName</strong> and <strong>sku</strong> values from your new Web App&#39;s properties.</p>
 </li>
 <li><p>View the newly created Website by using the following command:</p>
 <pre><code>explorer “http://[Host Name]”
@@ -186,7 +186,7 @@
 <ol>
 <li><p>Create a new instance of the <strong>Resource group</strong> by using following command and details:</p>
 <pre><code>New-AzureRmResourceGroup -Name rgb20532 -Location &quot;West US&quot; 
-New-AzureRmResourceGroupDeployment -ResourceGroupName rgb20532 -TemplateUri -TemplateFile &quot;F:\Mod09\Labfiles\azuredeploy.json&quot;
+New-AzureRmResourceGroupDeployment -ResourceGroupName rgb20532 -TemplateFile &quot;F:\Mod09\Labfiles\azuredeploy.json&quot;
 </code></pre><ul>
 <li><p>administratorLogin: <strong>testuser</strong></p>
 </li>
